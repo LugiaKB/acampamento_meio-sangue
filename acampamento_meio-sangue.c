@@ -542,7 +542,12 @@ int main()
                         if (id_satiro <= meiosangue.qtd_satiros)
                         {
                             printf("Deseja remover %s? Responda S para sim e N para não\n", meiosangue.satiro[id_satiro - 1].nome);
+                            int ch;
+                            while ((ch = getchar()) != '\n' && ch != EOF)
+                                continue;
+
                             scanf("%c", &check);
+
                             if (check == 'S')
                             {
                                 RemoverDado(&meiosangue, "satiro", id_satiro - 1);
@@ -661,7 +666,11 @@ int main()
                         case 4:
                         {
                             printf("Digite o numero da arma que deseja remover: ");
-                            scanf("%i", &id_arma);
+                            int ch;
+                            while ((ch = getchar()) != '\n' && ch != EOF)
+                                continue;
+
+                            scanf("%c", &check);
 
                             if (id_arma <= meiosangue.qtd_armas)
                             {
